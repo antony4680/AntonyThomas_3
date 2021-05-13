@@ -1,0 +1,373 @@
+* {
+    margin: 0;
+    padding: 0;
+    /* This font is obtained from the 'google fonts' */
+    font-family: "Playfair Display", serif;
+  }
+  
+  .header {
+    min-height: 100vh;
+    width: 100%;
+    /* see below to change background colour */
+    background-image: linear-gradient(
+        rgba(22, 14, 3, 0),
+        rgba(230, 340, 106,0)
+      ),
+      url(Images/Hero.png);
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    background-color: antiquewhite;
+  }
+  
+  nav {
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Fix the size of the logo */
+  nav img {
+    width: 150px;
+  }
+  .nav-links {
+    flex: 1;
+    text-align: right;
+  }
+  .nav-links ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+  }
+  .nav-links ul li a {
+    /* To change the colour of icons like home , news... in the top */
+    text-decoration: none;
+    font-size: 13px;
+  }
+
+  .phone{
+    display:inline-block ;
+    text-decoration: none;
+    color: #ffffff;
+    border: 1px solid rgb(255, 252, 252);
+    padding: 12px 34px;
+    background: #0e0244;
+    position: relative;
+    cursor: pointer;
+  }
+  .phone :hover {
+    border: 1px solid #87e60a;
+    background: #6d0a0a;
+    transition: 1s;
+  }
+  .phone :hover::after{
+      width: 100px;
+  }
+  .nav-links ul li ::after {
+    content: "";
+    /* If the width changes from 0 you could see a underline on icons like home, news on the top side */
+    width: 0%;
+    height: 2px;
+    background: #06054d;
+    display: block;
+    margin: auto;
+    transition: 0.5s;
+  }
+  /* Here, we are addiung a hover effect which will show a line moving under our icons in the top */
+  .nav-links ul li :hover::after {
+    width: 100%;
+  }
+  
+  /* From here on we are starting manipulating the first heading and the link associated to it */
+  
+  .text-box {
+    width: 90%;
+    color: #070647;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: left;
+  }
+  /* we are going to incresase the font size of the title */
+  .text-box h1 {
+    font-size: 62px;
+    color: #05053b;
+  }
+  
+  .text-box p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: #030231;
+  }
+  
+  /* Now we are working with the button */
+  .hero-btn {
+    display: inline-block;
+    text-decoration: none;
+    color: #05053b;
+    border: 1px solid rgb(160, 27, 27);
+    padding: 12px 34px;
+    background: #fff3f3;
+    position: relative;
+    cursor: pointer;
+  }
+  /* Now we are adding hover effect to the button */
+  .hero-btn:hover {
+    border: 1px solid #d87171;
+    background: #f19494;
+    transition: 1s;
+  }
+  
+  /* This code is used to remove changes done for mobile without effecting lap */
+  nav .fa {
+    display: none;
+  }
+  /* No we are trying to make this code suitable for mobiles */
+  
+  @media (max-width: 700px) {
+    .text-box h1 {
+      font-size: 20px;
+    }
+    .nav-links ul li {
+      display: block;
+    }
+    .nav-links {
+      position: absolute;
+      background: #689;
+      height: 100vh;
+      width: 200px;
+      top: 0;
+      right: -200px;
+      text-align: left;
+      z-index: 2;
+      transition: 1s;
+    }
+    nav .fa {
+      display: block;
+      color: #465;
+      margin: 10px;
+      font-size: 22px;
+      cursor: pointer;
+    }
+    .nav-links ul {
+      padding: 30px;
+    }
+  }
+  
+  .box-text {
+    background-color: #030229;
+    width: 90%;
+    height: 25%;
+    color: #faf5f5;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
+  }
+  
+  .box-text h2{
+    margin-top: 50px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 35px;
+  }
+  
+  .box-text p{
+    text-align: right;
+    margin-top: -75px;
+    margin-right: 80px;
+    font-size: 14px;
+    color: #f4f4f8;
+  }
+  
+  .centre-text{
+    top: 1000px;
+    width: 90%;
+    color: #4643f4;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  .centre-text h6{
+    font-size: medium;
+    color: #465;
+  }
+  .centre-text h2{
+    color: rgb(18, 2, 58) ;
+  }
+  .centre-text p{
+    color: #465; 
+  }
+  
+  
+  .text1{
+    margin-left: -90px; 
+    background-color: #fff3f3;
+    width: 550px;
+    height: 580px;
+    color: #4651e0;
+    position: absolute;
+    top: 180%;
+    left: 60%;
+  
+    text-align: center;
+  }
+  .text1 img{
+    width:550px;
+    height: 500px ;
+  }
+  
+  .text2{
+    margin-right: -90px;
+    background-color:#fff3f3;
+    width: 550px;
+    height: 580px;
+    color: #4651e0;
+    position: absolute;
+    top: 180%;
+    right: 60%;
+  
+    text-align: center;
+  }
+  .text2 img{
+    width:550px;
+    height: 500px ;
+  }
+  
+  .text3{
+    margin-left: -90px;
+    background-color: #fff3f3;
+    width: 550px;
+    height: 580px;
+    color: #4651e0;
+    position: absolute;
+    top: 280%;
+    left: 60%;
+   
+    text-align: center;
+  }
+  .text3 img{
+    width:550px;
+    height: 500px ;
+  }
+  
+  .text4{
+    margin-right: -90px;
+    background-color: #fff3f3;
+    width: 550px;
+    height: 580px;
+    color: #4651e0;
+    position: absolute;
+    top: 280%;
+    right: 60%;
+    
+    text-align: center;
+  }
+  .text4 img{
+    width:550px;
+    height: 500px ;
+  }
+  
+  .link{
+    margin-right: 600px;
+    margin-left: 600px;
+    margin-top: 1850px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    background: #f7dada;
+    border: 3px;
+  }
+  
+  .some-text{
+    background-color: none;
+    width: 90%;
+    height: 25%;
+    color: #060866;
+    position: absolute;
+    top: 415%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: justify;
+  }
+  .some-text h6{
+    margin-top: 50px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 25px;
+  }
+  .some-text h2{
+    margin-top: 20px;
+    margin-left: 50px;
+    text-align: left;
+    font-size: 35px;
+  }
+  .some-text p{
+    text-align: right;
+    margin-top: -120px;
+    margin-right: 80px;
+    font-size: 18px;
+    color: #090961;
+  }
+  .some-text a{
+    background-color: none; 
+    border: none;
+    color: #090961;
+    padding: 15px 32px;
+    text-align: right;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 800px;
+  }
+  
+  .points{
+    text-align: center;
+    margin-top: 450px;
+    display:flex;
+    justify-content: space-between;
+  }
+  .notes{
+    flex-basis: 51%;
+    background: #ebd3d3;
+    border-radius: 50px;
+    margin-bottom: 5%;
+    padding: 25px 20px;
+    box-sizing: border-box;
+  }
+  
+  .writings{
+    background-color: #030229;
+    margin-top: 400px;
+    margin-bottom: -30px;
+    width: 100%;
+    height: 80%;
+    position: absolute;
+   
+    
+    text-align: justify;
+  }
+  .top-left{
+    
+    color: #fff;
+    text-align: left;
+  }
+  .top-right{
+    text-align:right;
+    color: #fff;
+  }
+  .bottom-left{
+    text-align: left;
+    color: #fff;
+  }
+  .bottom-right{
+    text-align: right;
+    color: #fff;
+  }
